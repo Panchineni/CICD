@@ -22,7 +22,7 @@ jobs:
         env:
           api: ${{ vars.api }}
         run: |
-          echo "$api (branch: $GITHUB_REF_NAME)"
+          echo "My var ${{ vars.api }}"
 
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v5
