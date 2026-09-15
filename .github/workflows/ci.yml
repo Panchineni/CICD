@@ -20,9 +20,9 @@ jobs:
 
       - name: Show test variable
         env:
-          api: ${{ secrets.api }}
+          api: ${{ vars.api }}
         run: |
-          echo "My var ${{ secrets.api }}"
+          echo "My var ${{ vars.api }}"
 
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v5
