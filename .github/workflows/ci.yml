@@ -18,6 +18,12 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
+      - name: Show test variable
+        env:
+          api: ${{ vars.api }}
+        run: |
+          echo "$api (branch: $GITHUB_REF_NAME)"
+
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v5
         with:
@@ -29,4 +35,3 @@ jobs:
 
       - name: Run tests
         run: python -m pytest
-
