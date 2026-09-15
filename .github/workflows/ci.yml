@@ -18,11 +18,11 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Show test variable
+      - name: Show repository api variable
         env:
-          api: ${{ vars.api }}
+          API: ${{ vars.api }}
         run: |
-          echo "My var ${{ vars.api }}"
+          echo "Repository api: $API"
 
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v5
@@ -35,3 +35,13 @@ jobs:
 
       - name: Run tests
         run: python -m pytest
+
+  show_prod_variable:
+    runs-on: ubuntu-latest
+    environment: prod
+    steps:
+      - name: Show prod environment api variable
+        env:
+          API: ${{ vars.api }}
+        run: |
+          echo "Prod environment api: $API"
