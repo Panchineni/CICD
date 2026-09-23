@@ -42,7 +42,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: prod
     steps:
-      - name: Show prod environment api variable
+      - name: Show produ environment api variable
         env:
           API: ${{ vars.api }}
         run: |
