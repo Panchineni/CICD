@@ -22,7 +22,7 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Show repository api variable
+      - name: Show repository api variables
         run: |
           echo "Repository api (captured before jobs): $REPO_API"
 
